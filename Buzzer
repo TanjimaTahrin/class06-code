@@ -1,0 +1,19 @@
+int buzzer = 10;     // Pin connected to the buzzer
+int button = 2;      // Pin connected to the button
+int buttonState = 0; // Variable to store the button state
+
+void setup() {
+  pinMode(buzzer, OUTPUT);   // Set buzzer pin as output
+  pinMode(button, INPUT);    // Set button pin as input with pull-down resistor
+}
+
+void loop() {
+  buttonState = digitalRead(button); // Read the state of the button
+
+  // If the button is pressed, turn on the buzzer
+  if (buttonState == HIGH) {
+    digitalWrite(buzzer, HIGH); // Turn the buzzer on
+  } else {
+    digitalWrite(buzzer, LOW);  // Turn the buzzer off
+  }
+}
